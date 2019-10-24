@@ -1,2 +1,2 @@
 # SudokuSolver
-solves sudoku instead of you
+solves sudoku
