@@ -58,16 +58,12 @@ def find_empty_positions(grid):
 
 
 def find_possible_values(grid, pos):
-    """ Вернуть множество всех возможных значения для указанной позиции
+    """ Вернуть все возможные значения для указанной позиции
     """
-    answers = []
-    for value in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "."]:
-        if value not in (set(get_row(grid, pos)) | set(get_col(grid, pos)) | set(get_block(grid, pos))):
-            answers.append(value)
-    if len(set(answers)) > 0:
-        return set(answers)
-    else:
-        return 0
+    return set('123456789') -\
+           set(get_row(grid, pos)) -\
+           set(get_col(grid, pos)) -\
+           set(get_block(grid, pos))
 
 
 def solve(grid):
